@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HumanF-Basic@TurnL
+  m_Controller: {fileID: 9100000, guid: bcc1edf296234584eaff8be75383c157, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 3094330708855449807, guid: 19d4cab1f1a36f44db3b80478afd3cb9, type: 3}
+    m_OverrideClip: {fileID: 3094330708855449807, guid: 5bd3d7f1a4660714fac37ca2bed05096, type: 3}

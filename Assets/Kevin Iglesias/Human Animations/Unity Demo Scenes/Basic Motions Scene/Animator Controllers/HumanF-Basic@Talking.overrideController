@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HumanF-Basic@Talking
+  m_Controller: {fileID: 9100000, guid: 8cd926921e91c4a45ac01d892de6feed, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 3094330708855449807, guid: 5277e5180e302184fb73653674a14c85, type: 3}
+    m_OverrideClip: {fileID: 3094330708855449807, guid: 573ca1a2b43c1954cb3295c5db70e290, type: 3}
+  - m_OriginalClip: {fileID: 3094330708855449807, guid: 13e5c6347e4990141aff0df3db32a8d6, type: 3}
+    m_OverrideClip: {fileID: 3094330708855449807, guid: 59451014775df7c4ab285e85237cd01c, type: 3}
+  - m_OriginalClip: {fileID: 3094330708855449807, guid: 657f537a6fb20704190454abfa01f377, type: 3}
+    m_OverrideClip: {fileID: 3094330708855449807, guid: ef7fc1c2505f93948addc245824a58b1, type: 3}

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ab2641b73c6f49c4abde5f18108f002b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 178395
+  packageName: Human Base Meshes
+  packageVersion: 2.0
+  assetPath: Assets/Kevin Iglesias/Human Base Meshes/Materials/HumanBaseMeshesShader.shader
+  uploadId: 706734

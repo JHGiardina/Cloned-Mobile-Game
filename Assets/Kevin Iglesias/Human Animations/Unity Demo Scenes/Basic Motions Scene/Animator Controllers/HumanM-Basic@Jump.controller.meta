@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 332444096c15b084095b21130cb73b66
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154271
+  packageName: Basic Motions FREE
+  packageVersion: 2.3.3
+  assetPath: Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Basic Motions
+    Scene/Animator Controllers/HumanM-Basic@Jump.controller
+  uploadId: 741828

@@ -35,6 +35,6 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(moveInput.x, 0, 0) * moveSpeed * Time.deltaTime;
         transform.Translate(move);
-        Debug.Log("Move vector: " + move);
+        //Debug.Log("Move vector: " + move);
     }
 }

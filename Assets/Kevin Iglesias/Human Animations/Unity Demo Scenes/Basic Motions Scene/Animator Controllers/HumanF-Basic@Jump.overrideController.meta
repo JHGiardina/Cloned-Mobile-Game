@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 464fcc708a554164ba5831d84425c7bc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 22100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154271
+  packageName: Basic Motions FREE
+  packageVersion: 2.3.3
+  assetPath: Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Basic Motions
+    Scene/Animator Controllers/HumanF-Basic@Jump.overrideController
+  uploadId: 741828

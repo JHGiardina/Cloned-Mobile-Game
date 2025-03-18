@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 3868acb69ac56f648b9309fc6f11f3b0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 22100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 154271
+  packageName: Basic Motions FREE
+  packageVersion: 2.3.3
+  assetPath: Assets/Kevin Iglesias/Human Animations/Unity Demo Scenes/Basic Motions
+    Scene/Animator Controllers/HumanF-Basic@Idles.overrideController
+  uploadId: 741828
