@@ -5,6 +5,8 @@ public class PlayerSpawner : MonoBehaviour
 {
     public GameObject charPrefab;
     public Transform charSpawnLoc;
+    int newPlayers;
+    private GateCount count;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,22 +21,30 @@ public class PlayerSpawner : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        //Debug.Log("Collission!");
+        //int newPlayers;
+        GateCount count = other.GetComponent<GateCount>();
 
-
-        TextMeshProUGUI[] tmpArray = other.GetComponentsInChildren<TextMeshProUGUI>(true);
-        Debug.Log(tmpArray);
-        TextMeshProUGUI tmp = tmpArray[0];
-        string tmpText = tmp.text.Trim();
-        if (tmpText.StartsWith("+"))
-        {
-            tmpText = tmpText.Substring(1);
+        if(count == null){
+            Debug.Log("null " + count);
         }
+        Debug.Log("oth " + other);
+        newPlayers = count.finalCount;
+        Debug.Log("New player: " + newPlayers);
+        Debug.Log("Collission! w/ " + count.finalCount);
 
 
-        int newPlayers;
-        if(int.TryParse(tmpText, out newPlayers))
-        {
+        //TextMeshProUGUI tmp = other.GetComponentInChildren<TextMeshProUGUI>(true);
+        //Debug.Log(tmpArray);
+        //TextMeshProUGUI tmp = tmpArray[0];
+        //string tmpText = tmp.text.Trim();
+        // if (tmpText.StartsWith("+"))
+        // {
+        //     tmpText = tmpText.Substring(1);
+        // }
+
+
+        // if(int.TryParse(tmpText, out newPlayers))
+        // {
             if (newPlayers > 0 )
             {
                 PosSpawnPlayers(newPlayers);
@@ -43,7 +53,7 @@ public class PlayerSpawner : MonoBehaviour
             {
                 NegSpawnPlayers(newPlayers);
             }
-        }
+       // }
 
 
     }
@@ -52,11 +62,11 @@ public class PlayerSpawner : MonoBehaviour
     {
         if (count <= 0) return;
 
-        for (int i = 0; i < 0; i++)
+        for (int i = 0; i < count; i++)
         {
             float angle = i * (360f / count);
             float radians = angle * Mathf.Deg2Rad;
-            Vector3 spawnPos = charSpawnLoc.position + new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians)) * 8;
+            Vector3 spawnPos = charSpawnLoc.position + new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians)) * 4;
 
             Vector3 offset = new Vector3(0, 1, 0);
             GameObject newObject = Instantiate(charPrefab, spawnPos, charSpawnLoc.rotation);

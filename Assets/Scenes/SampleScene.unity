@@ -971,7 +971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b59467ae141435aabd3f0b2c05543f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charPrefab: {fileID: 7434499954083312638, guid: bf3068461b1684e24ac944802a5120ff, type: 3}
+  charPrefab: {fileID: 1712622821}
   charSpawnLoc: {fileID: 1111748296}
 --- !u!54 &1111748299
 Rigidbody:
@@ -1031,6 +1031,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1712622821 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7434499954083312638, guid: bf3068461b1684e24ac944802a5120ff, type: 3}
+  m_PrefabInstance: {fileID: 7349936704399002677}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1853728483
 GameObject:
   m_ObjectHideFlags: 0
@@ -1396,10 +1401,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1111748296}
     m_Modifications:
-    - target: {fileID: 4481293934672791482, guid: bf3068461b1684e24ac944802a5120ff, type: 3}
-      propertyPath: m_Constraints
-      value: 112
-      objectReference: {fileID: 0}
     - target: {fileID: 7434499954083312638, guid: bf3068461b1684e24ac944802a5120ff, type: 3}
       propertyPath: m_Name
       value: HumanBaseMesh_Male
