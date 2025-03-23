@@ -14,7 +14,7 @@ public class EnemySpawer : MonoBehaviour
     {
         float t = Mathf.Clamp01(Time.time / timeToMax);
         int curCount = Mathf.RoundToInt(Mathf.Lerp(minCount, maxCount, t));
-        PosSpawnPlayers(curCount)
+        PosSpawnPlayers(curCount);
     }
 
     // Update is called once per frame

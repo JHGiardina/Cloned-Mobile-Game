@@ -5,46 +5,43 @@ public class PlayerSpawner : MonoBehaviour
 {
     public GameObject charPrefab;
     public Transform charSpawnLoc;
+
+    public TextMeshProUGUI currentCountTMP;
+    public int curPlayerCount;
     int newPlayers;
     private GateCount count;
+    private float radRandMin = .5f;
+    private float radRandMax = 4f;
+    private float timeToMaxRad = 30f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        curPlayerCount = charSpawnLoc.childCount - 1;
+        currentCountTMP.text = curPlayerCount.ToString();
     }
 
     private void OnTriggerEnter(Collider other) 
     {
+
+
         //int newPlayers;
         GateCount count = other.GetComponent<GateCount>();
 
-        if(count == null){
-            Debug.Log("null " + count);
-        }
-        Debug.Log("oth " + other);
-        newPlayers = count.finalCount;
-        Debug.Log("New player: " + newPlayers);
-        Debug.Log("Collission! w/ " + count.finalCount);
+        if (count != null)
+        {
+            //Debug.Log("oth " + other);
+            newPlayers = count.finalCount;
+            //Debug.Log("New player: " + newPlayers);
+            //Debug.Log("Collission! w/ " + count.finalCount);
 
 
-        //TextMeshProUGUI tmp = other.GetComponentInChildren<TextMeshProUGUI>(true);
-        //Debug.Log(tmpArray);
-        //TextMeshProUGUI tmp = tmpArray[0];
-        //string tmpText = tmp.text.Trim();
-        // if (tmpText.StartsWith("+"))
-        // {
-        //     tmpText = tmpText.Substring(1);
-        // }
 
-
-        // if(int.TryParse(tmpText, out newPlayers))
-        // {
             if (newPlayers > 0 )
             {
                 PosSpawnPlayers(newPlayers);
@@ -53,20 +50,27 @@ public class PlayerSpawner : MonoBehaviour
             {
                 NegSpawnPlayers(newPlayers);
             }
-       // }
+
+        } else
+        {
+            return;
+        }
 
 
     }
-
+ 
     private void PosSpawnPlayers(int count)
     {
         if (count <= 0) return;
+
+        float t = Mathf.Clamp01(Time.time / timeToMaxRad);
+        float curRad = Mathf.Lerp(radRandMin, radRandMax, t);
 
         for (int i = 0; i < count; i++)
         {
             float angle = i * (360f / count);
             float radians = angle * Mathf.Deg2Rad;
-            Vector3 spawnPos = charSpawnLoc.position + new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians)) * 4;
+            Vector3 spawnPos = charSpawnLoc.position + new Vector3(Mathf.Cos(radians), 0, Mathf.Sin(radians)) * curRad;
 
             Vector3 offset = new Vector3(0, 1, 0);
             GameObject newObject = Instantiate(charPrefab, spawnPos, charSpawnLoc.rotation);
@@ -76,13 +80,23 @@ public class PlayerSpawner : MonoBehaviour
     }
     private void NegSpawnPlayers(int count)
     {
-
+        
+        int toDestroy = Mathf.Abs(count);
         int destroyed = 0;
-        for (int i = transform.childCount - 1; i >= 0; i--)
+        // Assuming you want to remove from the same parent as PosSpawnPlayers
+        for (int i = charSpawnLoc.childCount - 1; i >= 0 && destroyed < toDestroy; i--)
         {
-            if (destroyed <= count) break;
-            Destroy(transform.GetChild(i).gameObject);
-            destroyed--;
+            Destroy(charSpawnLoc.GetChild(i).gameObject);
+            destroyed++;
         }
+
+
+        // int destroyed = 0;
+        // for (int i = transform.childCount - 1; i >= 0; i--)
+        // {
+        //     if (destroyed <= count) break;
+        //     Destroy(transform.GetChild(i).gameObject);
+        //     destroyed--;
+        // }
     }
 }
