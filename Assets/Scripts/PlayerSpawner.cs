@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class PlayerSpawner : MonoBehaviour
     {
         curPlayerCount = charSpawnLoc.childCount - 1;
         currentCountTMP.text = curPlayerCount.ToString();
+        if (charSpawnLoc.childCount <= 1)
+        {
+            SceneManager.LoadScene("Respawn");
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
